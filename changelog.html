@@ -7,8 +7,10 @@
     <title>Changelog</title>
     <link rel="stylesheet" href="theme/css/foundation.min.css">
     <link rel="stylesheet" href="theme/css/app.css">
-     <link rel="stylesheet" href="theme/highlight.js/styles/github-gist.css"> 
     
+     <link rel="stylesheet" href="theme/highlight.js/styles/github-gist.css">  <link rel="stylesheet" href="theme/css/foundation-icons.custom.css"> 
+    
+     <link rel="prev" href="community.html"  title="Community"  />  <link rel="start" href="index.html"  title="Introduction"  />  <link rel="toc" href="site-contents.html"  title="Table of Contents"  /> 
   </head>
   <body>
     <div class="expanded row">
@@ -40,8 +42,251 @@
             <div class="row">
               
               <main class="columns large-order-2 sections" id="_sections">
+                 
+  <ul class="menu align-right simple a_navbar a_navbar_top">
+    
+      
+        <li><a href="community.html"  title="Community" ><span class="a_foundation_icon"></span>  Previous</a></li>
+      
+    
+      
+        <li><span><span class="a_foundation_icon"></span>  Next</span></li>
+      
+    
+      
+        <li><a href="site-contents.html"  title="Table of Contents" ><span class="a_foundation_icon"></span>  Contents</a></li>
+      
+    
+  </ul>
+ 
                 
                 <h1 id="changelog" class="a_section" data-magellan-target="changelog">Changelog<a class="a_hlink" href="#changelog"></a></h1>
+<h2 id="version-0.20.0" class="a_section" data-magellan-target="version-0.20.0">Version 0.20.0<a class="a_hlink" href="#version-0.20.0"></a></h2>
+<blockquote>
+<p>2020 October 22</p>
+</blockquote>
+<p>This release upgrades to Scala.js 1.3.0.</p>
+<ul>
+<li>Drop support for Scala.js 0.6.x</li>
+<li>Drop support for Scala.js 1.0.x through 1.2.x</li>
+<li>Add support for Scala.js 1.3.x</li>
+</ul>
+<h2 id="version-0.19.0" class="a_section" data-magellan-target="version-0.19.0">Version 0.19.0<a class="a_hlink" href="#version-0.19.0"></a></h2>
+<blockquote>
+<p>2020 October 16</p>
+</blockquote>
+<p>This release drops support for sbt 0.13.x, and adds support for sbt-web-scalajs 1.1.0+.</p>
+<h2 id="version-0.18.0" class="a_section" data-magellan-target="version-0.18.0">Version 0.18.0<a class="a_hlink" href="#version-0.18.0"></a></h2>
+<blockquote>
+<p>2020 May 16</p>
+</blockquote>
+<p>This release adds support for scala.js 1.1.0</p>
+<h2 id="version-0.17.0" class="a_section" data-magellan-target="version-0.17.0">Version 0.17.0<a class="a_hlink" href="#version-0.17.0"></a></h2>
+<blockquote>
+<p>2020 Feb 24</p>
+</blockquote>
+<p>The main highlight of this release is better support for Scala.js 1.0.0+ out of the box.
+We still support Scala.js 0.6.31+ as well.</p>
+<ul>
+<li>With Scala.js 1.x, dynamically load the appropriate scalajs-linker, removing the need for the
+<code class="hljs">libraryDependencies += &quot;org.scala-js&quot; %% &quot;scalajs-linker&quot; % scalaVersion</code>
+workaround.</li>
+<li>With Scala.js 1.x, do not internally link twice when using the <code class="hljs">LibraryOnly</code> and
+<code class="hljs">LibraryAndApplication</code> bundling modes, improving performance.</li>
+<li>With Scala.js 1.x, better integrate with the <code class="hljs">jsEnv</code> and <code class="hljs">jsEnvInput</code> tasks of
+Scala.js when using <code class="hljs">requireJsDomEnv</code>.</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.16.0...v0.17.0">here</a>.</p>
+<h2 id="version-0.16.0" class="a_section" data-magellan-target="version-0.16.0">Version 0.16.0<a class="a_hlink" href="#version-0.16.0"></a></h2>
+<blockquote>
+<p>2019 Dec 09</p>
+</blockquote>
+<p>The main highlight of this release is the support of Scala.js 1.0.0-RC1 instead of 1.0.0-M7.
+We still support Scala.js 0.6.x, but we require at least version 0.6.31.</p>
+<ul>
+<li>Add support for Scala.js 1.0.0-RC1 (drop support for 1.0.0-M7)</li>
+<li>Require Scala.js 0.6.31 or later in the 0.6.x branch</li>
+<li>Require sbt 1.2.1 or later in the sbt 1.x branch (sbt 0.13.17+ is still supported)</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.15.0...v0.16.0">here</a>.</p>
+<h2 id="version-0.15.0" class="a_section" data-magellan-target="version-0.15.0">Version 0.15.0<a class="a_hlink" href="#version-0.15.0"></a></h2>
+<blockquote>
+<p>2019 May 21</p>
+</blockquote>
+<p>The main highlight of this release is the support of Scala.js 1.x. We still support Scala.js 0.6.x, but
+we require at least version 0.6.26.</p>
+<p>New features:</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/201">#201</a>: Introduce a <code class="hljs">jsSourceDirectories</code> setting,
+which points to a list of directories containing files (<code class="hljs">.js</code>, <code class="hljs">.json</code>, etc.) that can be used by Scala.js
+projects.</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/246">#246</a>: Support Scala.js 1.0.0-M7.</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.14.0...v0.15.0">here</a>.</p>
+<h2 id="version-0.14.0" class="a_section" data-magellan-target="version-0.14.0">Version 0.14.0<a class="a_hlink" href="#version-0.14.0"></a></h2>
+<blockquote>
+<p>2018 Nov 5</p>
+</blockquote>
+<p>This release modifies the <code class="hljs">npmUpdate</code> task and splits the logic into two separate tasks; <code class="hljs">npmInstallDependencies</code> and
+<code class="hljs">npmInstallJSResources</code>. <code class="hljs">npmUpdate</code> has a less obvious side effect that, not only does it run <code class="hljs">npm install</code>, it would
+also copy all the JavaScript resources to the <code class="hljs">node_modules</code> directory. This behaviour is fine except that it is not
+suitable for use in <code class="hljs">sourceGenerators</code> and would cause a cycle in the tasks. <code class="hljs">npmInstallDependencies</code> should be used in
+cases where you want to want to use a npm module from a sbt task.</p>
+<p>This fixes the following bugs:</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/258">#258</a>: Unable to use npmUpdate in sourceGenerators</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/261">#261</a>: Support jsdom v12.x</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/267">#267</a>: Support JDK9+</li>
+</ul>
+<p>New features:</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/264">#264</a>: Ability to set <code class="hljs">node</code> <a href="https://nodejs.org/api/cli.html">flags</a></li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/266">#266</a>: Custom setting for DOM enabled <code class="hljs">JSEnv</code> in <code class="hljs">test</code>. (<code class="hljs">requiresDOM</code> is deprecated)</li>
+</ul>
+<p>And documentation fixes:</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/269">#269</a>: Update docs</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.13.1...v0.14.0">here</a>.</p>
+<h2 id="version-0.13.1" class="a_section" data-magellan-target="version-0.13.1">Version 0.13.1<a class="a_hlink" href="#version-0.13.1"></a></h2>
+<blockquote>
+<p>2018 Jul 13</p>
+</blockquote>
+<p>This fixes the following bugs:</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/224">#224</a>: Use project-level custom NPM registry</li>
+</ul>
+<p>The following PRs are included in this release</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/254">#254</a>: Npm/yarn args</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/251">#251</a>: Fix typo</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/249">#249</a>: Sync yarn.lock between baseDir and installDir</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.13.0...v0.14.1">here</a>.</p>
+<h2 id="version-0.13.0" class="a_section" data-magellan-target="version-0.13.0">Version 0.13.0<a class="a_hlink" href="#version-0.13.0"></a></h2>
+<blockquote>
+<p>2018 Jun 5</p>
+</blockquote>
+<p>This release contains an important revamp on the way webpack support works.
+Webpack produces a json <a href="https://webpack.js.org/api/stats">stats output</a> which
+describes in detail the results of processing your application. Thus, parsing
+stats we can learn exactly what files are produced rather than guessing.</p>
+<p>Due to the very nature of parsing the output, and the wide variety of webpack
+configurations this process may not work in all cases. Please lets us know if
+you find any issues.</p>
+<p><strong>Note:</strong> <code class="hljs">Stats</code> parsing has been tested mostly in Webpack 4. The results may vary with
+older versions.</p>
+<p><strong>Note:</strong> If your webpack produces any kind of std output, parsing stats will likely break.</p>
+<p>This fixes the following bugs:</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/192">#192</a>: Webpack failed to create application bundle</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/issues/111">#111</a>: Lots of warnings about source map URLs</li>
+</ul>
+<p>The following PRs are included in this release</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/247">#247</a>: Assets to sbt</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/242">#242</a>: Better error display when the webpack call fails</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/241">#241</a>: Use Public path from webpack stats</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/240">#240</a>: Update concat-with-sourcemaps</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/239">#239</a>: Bugfix parsing errors on the output</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/238">#238</a>: Fix thread leak</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/237">#237</a>: add function as a module example</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/234">#234</a>: Read application asset name from stats</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.12.0...v0.13.0">here</a>.</p>
+<h2 id="version-0.12.0" class="a_section" data-magellan-target="version-0.12.0">Version 0.12.0<a class="a_hlink" href="#version-0.12.0"></a></h2>
+<blockquote>
+<p>2018 March 27</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/223">#223</a>: Webpack4 support</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.11.0...v0.12.0">here</a>.</p>
+<h2 id="version-0.11.0" class="a_section" data-magellan-target="version-0.11.0">Version 0.11.0<a class="a_hlink" href="#version-0.11.0"></a></h2>
+<blockquote>
+<p>2018 March 15</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/228">#228</a>: Implements npmUdpdate in a separate object;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/225">#225</a>: Add --mutex to yarn command;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/222">#222</a>: Make library example work in OSX;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/220">#220</a>: Support passing an extra list of arguments to webpack;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/218">#218</a>: Fix <a href="https://github.com/scalacenter/scalajs-bundler/issues/136">#136</a>: Add more precise jsdom detection:</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/216">#216</a>: Fix <a href="https://github.com/scalacenter/scalajs-bundler/issues/200">#200</a>: current webpack devserver version does not accept watchOptions;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/215">#215</a>: Fix <a href="https://github.com/scalacenter/scalajs-bundler/issues/99">#99</a>: Relax NPM dependency version conflict resolution;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/213">#213</a>: Fix <a href="https://github.com/scalacenter/scalajs-bundler/issues/168">#168</a>: Update the snabbdom facade for Scala.js 1.0</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.10.0...v0.11.0">here</a>.</p>
+<h2 id="version-0.10.0" class="a_section" data-magellan-target="version-0.10.0">Version 0.10.0<a class="a_hlink" href="#version-0.10.0"></a></h2>
+<blockquote>
+<p>2018 January 31</p>
+</blockquote>
+<p>This release requires sbt 0.13.16+ and adds support for Scala.js 0.6.22.</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/210">#210</a>: Bundler doesn't support version of jsdom more than 9;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/185">#185</a>: Correct webpackBundlingMode key in docs;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/212">#212</a>: Migrate to sbt-scalajs 0.6.22;</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.9.0...v0.10.0">here</a>.</p>
+<h2 id="version-0.9.0" class="a_section" data-magellan-target="version-0.9.0">Version 0.9.0<a class="a_hlink" href="#version-0.9.0"></a></h2>
+<blockquote>
+<p>2017 October 12</p>
+</blockquote>
+<p>When upgrading to this release, make sure to migrate your webpack configuration to <a href="https://webpack.js.org/guides/migrating/">webpack 3.X</a>.</p>
+<p>This version works with both sbt version 0.13 and 1.0. In order to support sbt 1.0,
+Scala.js has been upgraded to <a href="https://www.scala-js.org/news/2017/07/29/announcing-scalajs-0.6.19/">0.6.19</a>.</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/175">#175</a>: Set webpack 3.X as default version;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/179">#179</a>: Cross publish for sbt 1.0;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/176">#176</a>: Run webpack-dev-server from the scalajs-bundler folder;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/176">#177</a>: Scope webpackBundlingMode per Scala.js stage (<code class="hljs">fastOptJS</code> or <code class="hljs">fullOptJS</code>);</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.8.0...v0.9.0">here</a>.</p>
+<h2 id="version-0.8.0" class="a_section" data-magellan-target="version-0.8.0">Version 0.8.0<a class="a_hlink" href="#version-0.8.0"></a></h2>
+<blockquote>
+<p>2017 September 10</p>
+</blockquote>
+<p>When upgrading to this release, make sure to check out the new <a href="reference.html#bundling-mode">webpackBundlingMode</a>
+configuration value. The old <code class="hljs">enableReloadWorkflow</code> key has been removed, in favor
+of <code class="hljs">BundlingMode.LibraryAndApplication()</code>.</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/143">#143</a>: Document the compatible versions of npm;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/146">#146</a>: Document how to use global modules with jsdom in tests;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/149">#149</a>: Introduce <code class="hljs">webpackBundlingMode</code> to finely control whether to bundle the output of Scala.js or not;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/153">#153</a>: Use the non interactive mode of Yarn;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/161">#161</a>: Set <code class="hljs">&quot;private&quot;: true</code> in generated <code class="hljs">package.json</code> file to eliminate errors from npm;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/162">#162</a>: Differentiate between missing and unsupported Webpack versions;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/166">#166</a>: Move to Travis-CI;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/167">#167</a>: Upgrade tests that use <code class="hljs">uuid</code>;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/171">#171</a>: Add <code class="hljs">scalaJSProjects</code> resource directories to <code class="hljs">monitoredScalaJSDirectories</code>;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/172">#172</a>: Use <code class="hljs">npm install</code> command instead of <code class="hljs">npm update</code>.</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.7.0...v0.8.0">here</a>.</p>
+<h2 id="version-0.7.0" class="a_section" data-magellan-target="version-0.7.0">Version 0.7.0<a class="a_hlink" href="#version-0.7.0"></a></h2>
+<blockquote>
+<p>2017 July 4</p>
+</blockquote>
+<p>When upgrading to this release, make sure to enable <code class="hljs">scalaJSUseMainModuleInitializer := true</code> in your build if you have a <code class="hljs">main</code> method.</p>
+<ul>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/125">#125</a>: Copy <code class="hljs">webpackResources</code> only if a custom webpack config file is used ;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/126">#126</a>: Ability to add custom <code class="hljs">package.json</code> entries ;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/129">#129</a>: Generate a JavaScript array of webpack entries rather than a string ;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/140">#140</a>: Upgrade to Scala.js 0.6.18 ;</li>
+<li><a href="https://github.com/scalacenter/scalajs-bundler/pull/141">#141</a>: Handle <code class="hljs">ImportWithGlobalFallback</code> in reload workflow.</li>
+</ul>
+<p>You can find the complete list of commits since the last release
+<a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.6.0...v0.7.0">here</a>.</p>
 <h2 id="version-0.6.0" class="a_section" data-magellan-target="version-0.6.0">Version 0.6.0<a class="a_hlink" href="#version-0.6.0"></a></h2>
 <blockquote>
 <p>2017 April 26</p>
@@ -140,64 +385,97 @@ the classpath can be <code class="hljs">@JSImport</code>ed by your Scala facades
 <p>You can find the complete list of commits since the last release
 <a href="https://github.com/scalacenter/scalajs-bundler/compare/v0.1...v0.2">here</a>.</p>
 
+                 
+  <ul class="menu align-right simple a_navbar a_navbar_bottom">
+    
+      
+        <li><a href="community.html"  title="Community" ><span class="a_foundation_icon"></span>  Previous</a></li>
+      
+    
+      
+        <li><span><span class="a_foundation_icon"></span>  Next</span></li>
+      
+    
+      
+        <li><a href="site-contents.html"  title="Table of Contents" ><span class="a_foundation_icon"></span>  Contents</a></li>
+      
+    
+  </ul>
+ 
               </main>
               
               
                 <div data-sticky-container class="small-12 medium-12 large-2 large-order-1 columns a_sitenav_container">
                   <nav class="a_sitenav" data-sticky data-sticky-on="large" data-anchor="_sections">
                     
-                  <ul>
-                     
+                    <ul>
+                       
   <li >
     
-      <a href="index.html">Introduction</a>
+      
+        <a href="index.html">Introduction</a>
+      
     
     
   </li>
   
   <li >
     
-      <a href="motivation.html">Motivation</a>
+      
+        <a href="motivation.html">Motivation</a>
+      
     
     
   </li>
   
   <li >
     
-      <a href="getting-started.html">Getting started</a>
+      
+        <a href="getting-started.html">Getting started</a>
+      
     
     
   </li>
   
   <li >
     
-      <a href="reference.html">Reference</a>
+      
+        <a href="reference.html">Reference</a>
+      
     
     
   </li>
   
   <li >
     
-      <a href="cookbook.html">Cookbook</a>
+      
+        <a href="cookbook.html">Cookbook</a>
+      
     
     
   </li>
   
   <li >
     
-      <a href="community.html">Community</a>
+      
+        <a href="community.html">Community</a>
+      
     
     
   </li>
   
   <li  class="a_thispage" >
     
-      <a href="changelog.html">Changelog</a>
+      
+        <a href="changelog.html">Changelog</a>
+      
     
     
   </li>
  
-                  </ul>
+                    </ul>
+                    
+                    
                   </nav>
                 </div>
               
@@ -209,63 +487,214 @@ the classpath can be <code class="hljs">@JSImport</code>ed by your Scala facades
 </header> 
                     <ul class="vertical menu" data-magellan>
                        
-  <li>
-    
-       <a href="#changelog">Changelog</a> 
-    
-    
-      <ul class="vertical menu">  
-  <li>
-    
-       <a href="#version-0.6.0">Version 0.6.0</a> 
-    
-    
-  </li>
   
-  <li>
-    
-       <a href="#version-0.5.0">Version 0.5.0</a> 
-    
-    
-  </li>
+    <li>
+      
+         <a href="#changelog">Changelog</a> 
+      
+      
+        <ul class="vertical menu">  
   
-  <li>
-    
-       <a href="#version-0.4.0">Version 0.4.0</a> 
-    
-    
-  </li>
+    <li>
+      
+         <a href="#version-0.20.0">Version 0.20.0</a> 
+      
+      
+    </li>
   
-  <li>
-    
-       <a href="#version-0.3.1">Version 0.3.1</a> 
-    
-    
-  </li>
   
-  <li>
-    
-       <a href="#version-0.3.0">Version 0.3.0</a> 
-    
-    
-  </li>
   
-  <li>
-    
-       <a href="#version-0.2.1">Version 0.2.1</a> 
-    
-    
-  </li>
+    <li>
+      
+         <a href="#version-0.19.0">Version 0.19.0</a> 
+      
+      
+    </li>
   
-  <li>
-    
-       <a href="#version-0.2">Version 0.2</a> 
-    
-    
-  </li>
+  
+  
+    <li>
+      
+         <a href="#version-0.18.0">Version 0.18.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.17.0">Version 0.17.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.16.0">Version 0.16.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.15.0">Version 0.15.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.14.0">Version 0.14.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.13.1">Version 0.13.1</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.13.0">Version 0.13.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.12.0">Version 0.12.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.11.0">Version 0.11.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.10.0">Version 0.10.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.9.0">Version 0.9.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.8.0">Version 0.8.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.7.0">Version 0.7.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.6.0">Version 0.6.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.5.0">Version 0.5.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.4.0">Version 0.4.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.3.1">Version 0.3.1</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.3.0">Version 0.3.0</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.2.1">Version 0.2.1</a> 
+      
+      
+    </li>
+  
+  
+  
+    <li>
+      
+         <a href="#version-0.2">Version 0.2</a> 
+      
+      
+    </li>
+  
   </ul>
-    
-  </li>
+      
+    </li>
+  
  
                     </ul>
                   </nav>
@@ -290,6 +719,7 @@ the classpath can be <code class="hljs">@JSImport</code>ed by your Scala facades
         </div>
       </footer>
     </div>
+    
     <script src="theme/js/jquery.min.js"></script>
     <script src="theme/js/what-input.min.js"></script>
     <script src="theme/js/foundation.min.js"></script>
